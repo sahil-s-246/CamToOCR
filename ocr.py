@@ -40,8 +40,9 @@ class Ocr:
         myobj = gTTS(text=text, lang="en", slow=False)
 
         # Saving the converted audio in a mp3 file named
-        # welcome
+        # welcome.mp3
         myobj.save("welcome.mp3")
 
         # Playing the converted file
         os.system("start welcome.mp3")
+
