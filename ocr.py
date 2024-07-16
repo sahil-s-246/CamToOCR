@@ -1,14 +1,17 @@
 from gtts import gTTS
 import os
 import requests
+import configparser
 
+cfg = configparser.ConfigParser()
+cfg.read('val.cfg')
 
 class Ocr:
 
     def get_img(self, file="images/example.jpg", overlay=True, language='eng'):
         data = {
             'isOverlayRequired': overlay,
-            'apikey': "K83065144088957",
+            'apikey': cfg["Api"]["key"],
             'language': language,
             'isCreateSearchablePdf': True,
             'OCREngine': 2
